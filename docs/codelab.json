@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-01-02T16:36:29Z",
+  "id": "docs",
+  "duration": 12,
+  "title": "Write a codelab with Google codelab tool suite",
+  "authors": "Benjamin Petetot",
+  "summary": "Write a codelab with Google codelab tool suite",
+  "source": "howto.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "meta"
+  ],
+  "tags": [
+    "beginner"
+  ],
+  "feedback": "https://petetot.netlify.com",
+  "url": "docs"
+}

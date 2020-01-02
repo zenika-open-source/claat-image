@@ -1,0 +1,93 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Write a codelab with Google codelab tool suite</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="docs"
+                  title="Write a codelab with Google codelab tool suite"
+                  environment="web"
+                  feedback-link="https://petetot.netlify.com">
+    
+      <google-codelab-step label="Overview" duration="1">
+        <h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
+<ul class="checklist">
+<li>How to write the codelab with markdown.</li>
+<li>How to generate the HTML static files.</li>
+<li>How to deploy it.</li>
+</ul>
+<h2 is-upgraded>Prerequisites</h2>
+<ul>
+<li>Docker</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Write with markdown" duration="5">
+        <p>Create a file named <code>my-codelab.md</code>. Open this file with your favorite editor (most of them have Markdown syntax hightlighting)</p>
+<p>On the top of the file, add some metadata about the codelab (id, summary, category, authors, etc.)</p>
+<p>Then use Markdown <code>heading</code> levels to defined the codelab structure and the different steps.</p>
+<p>You can find the <a href="https://github.com/googlecodelabs/tools/blob/master/FORMAT-GUIDE.md" target="_blank">complete Codelab Formatting Guide</a> explaining a codelab structure in markdown.</p>
+<p>Lot of features are available, you can:</p>
+<ul>
+<li>add code snippets</li>
+<li>use hyperlinks</li>
+<li>embed images</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Generate HTML" duration="5">
+        <p>We will use claat (Codelabs as a Thing) to generate HTML files from our Markdown file.<br>To avoid installing <code>Go</code>, I made a light docker image to use claat.</p>
+<p>First install the image:</p>
+<pre><code>docker pull bpetetot/claat
+</code></pre>
+<p>Execute claat:</p>
+<pre><code>docker container run -it -v $(pwd):/app bpetetot/claat export my-codelab.md
+</code></pre>
+<p><strong>You now have generate the codelab as HTML.</strong></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Deploy it" duration="1">
+        <p>Now you have a full HTML static codelab, you can deploy it with your hosting provider:</p>
+<ul>
+<li>GitHub pages</li>
+<li>Netlify</li>
+<li>Now.sh</li>
+<li>Firebase hosting</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
