@@ -31,12 +31,13 @@
         <h2 class="checklist" is-upgraded>What You&#39;ll Learn</h2>
 <ul class="checklist">
 <li>How to write the codelab with markdown.</li>
-<li>How to generate the HTML static files.</li>
+<li>How to generate the HTML static files of the codelab.</li>
 <li>How to deploy it.</li>
 </ul>
 <h2 is-upgraded>Prerequisites</h2>
 <ul>
 <li>Docker</li>
+<li>A Markdown Editor</li>
 </ul>
 
 
@@ -44,8 +45,46 @@
     
       <google-codelab-step label="Write with markdown" duration="5">
         <p>Create a file named <code>my-codelab.md</code>. Open this file with your favorite editor (most of them have Markdown syntax hightlighting)</p>
-<p>On the top of the file, add some metadata about the codelab (id, summary, category, authors, etc.)</p>
-<p>Then use Markdown <code>heading</code> levels to defined the codelab structure and the different steps.</p>
+<p>On the top of the file, add some metadata about the codelab (id, summary, category, authors, etc.).<br>With the first level Markdown <code>heading</code>, define the name of the codelab.</p>
+<pre><code>summary: Write a codelab with Google codelab tool suite
+id: docs
+categories: Meta
+tags: beginner
+status: Published 
+authors: Benjamin Petetot
+Feedback Link: https://petetot.netlify.com
+
+# Write a codelab with Google codelab tool suite
+</code></pre>
+<p>Then use second level Markdown <code>heading</code> to defined the codelab structure and the different steps.</p>
+<pre><code>&lt;!-- ------------------------ --&gt;
+## Overview (Step 1) 
+Duration: 1
+
+### What You&#39;ll Learn 
+- How to write the codelab with markdown.
+- How to generate the HTML static files of the codelab.
+- How to deploy it.
+
+### Prerequisites
+- Docker
+- A Markdown Editor
+
+&lt;!-- ------------------------ --&gt;
+## Overview  (Step 2) 
+Duration: 12
+
+### What You&#39;ll Learn 
+- How to write the codelab with markdown.
+- How to generate the HTML static files of the codelab.
+- How to deploy it.
+
+### Prerequisites
+- Docker
+- A Markdown Editor
+</code></pre>
+<p><code>Duration</code> is a metadata to give an estimated duration of each step.</p>
+<p>Finally, the third level Markdown <code>heading</code> defines different chapters in a step.</p>
 <p>You can find the <a href="https://github.com/googlecodelabs/tools/blob/master/FORMAT-GUIDE.md" target="_blank">complete Codelab Formatting Guide</a> explaining a codelab structure in markdown.</p>
 <p>Lot of features are available, you can:</p>
 <ul>
@@ -66,6 +105,9 @@
 <pre><code>docker container run -it -v $(pwd):/app bpetetot/claat export my-codelab.md
 </code></pre>
 <p><strong>You now have generate the codelab as HTML.</strong></p>
+<p>When you are working on the codelab, you can serve it on localhost:</p>
+<pre><code>docker container run -it -p 9090:9090 -v $(pwd):/app bpetetot/claat serve -addr 0.0.0.0:9090 my-codelab.md
+</code></pre>
 
 
       </google-codelab-step>
@@ -78,6 +120,7 @@
 <li>Now.sh</li>
 <li>Firebase hosting</li>
 </ul>
+<p><strong>Now you can create amazing codelabs and documentation. 🎉</strong></p>
 
 
       </google-codelab-step>
