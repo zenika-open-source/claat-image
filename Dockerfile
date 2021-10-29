@@ -1,8 +1,8 @@
-FROM golang:1
+FROM golang:1.17.2-bullseye
 
 # Install claat tool
 # https://github.com/googlecodelabs/tools/blob/master/claat/README.md#install
-RUN CGO_ENABLED=0 go get github.com/googlecodelabs/tools/claat
+RUN CGO_ENABLED=0 go install github.com/googlecodelabs/tools/claat@latest
 
 FROM scratch
 
