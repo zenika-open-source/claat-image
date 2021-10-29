@@ -6,17 +6,30 @@
 
 ### 🐳 [Image on Docker Hub](https://hub.docker.com/r/bpetetot/claat)
 
-## Install
+## 🚀 Usage
+
+### 🐚 Launch Claat
 
 ```sh
-docker pull bpetetot/claat
+docker container run -it -v $(pwd):/app bpetetot/claat:latest -h
 ```
 
-## Usage
+## ⚙️ Build the image
+
+Simply use the make target depending on your computer architecture:
 
 ```sh
-docker container run -it -v $(pwd):/app bpetetot/claat -h
+# on amd64 machines
+make build
+
+# on arm64 machines (apple M1 for instance)
+make build-arm64
+
+# on armv7 machines (Rapsberry PI)
+make build-armv7
 ```
+
+> If your machine lack *make* support, simply run the associated commands from the [makefile](/Makefile) instead.
 
 ## Author
 
@@ -31,10 +44,9 @@ Contributions, issues and feature requests are welcome!
 
 Feel free to check [issues page](https://github.com/bpetetot/claat-image/issues).
 
-## Show your support
+## 🙏 Show your support
 
 Give a ⭐️ if this project helped you!
-
 
 ## 📝 License
 
@@ -43,4 +55,4 @@ Copyright © 2019 [Benjamin Petetot](https://github.com/bpetetot).
 This project is [Apache-2.0](https://github.com/bpetetot/claat-image/blob/master/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+_This README was initialy generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
